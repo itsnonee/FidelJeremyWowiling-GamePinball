@@ -30,17 +30,11 @@ public class PaddlesController : MonoBehaviour
 
     private void hingeLimits()
     {
-        hingeLimitsMinMaxPaddleLeft(paddleLeft);
-        hingeLimitsMinMaxPaddleRight(paddleRight);
+        hingeLimitsMinMaxPaddles(paddleLeft);
+        hingeLimitsMinMaxPaddles(paddleRight);
     }
 
-    private void hingeLimitsMinMaxPaddleRight(HingeJoint hingeJoint)
-    {
-        targetReleased = hingeJoint.limits.min;
-        targetPressed = hingeJoint.limits.max;
-    }
-
-    private void hingeLimitsMinMaxPaddleLeft(HingeJoint hingeJoint)
+    private void hingeLimitsMinMaxPaddles(HingeJoint hingeJoint)
     {
         targetReleased = hingeJoint.limits.min;
         targetPressed = hingeJoint.limits.max;
