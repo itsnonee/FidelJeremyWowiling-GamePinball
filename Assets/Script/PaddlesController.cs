@@ -11,12 +11,14 @@ public class PaddlesController : MonoBehaviour
     [SerializeField] private KeyCode inputPaddleLeft;
     [SerializeField] private KeyCode inputPaddleRight;
 
-    [SerializeField] private int springPower;
+    [Header("Target Position")]
+    private float targetPressed;
+    private float targetReleased;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        hingeLimits();
     }
 
     // Update is called once per frame
@@ -24,6 +26,24 @@ public class PaddlesController : MonoBehaviour
     {
         HandlePaddleInput(paddleLeft, inputPaddleLeft);
         HandlePaddleInput(paddleRight, inputPaddleRight);
+    }
+
+    private void hingeLimits()
+    {
+        hingeLimitsMinMaxPaddleLeft(paddleLeft);
+        hingeLimitsMinMaxPaddleRight(paddleRight);
+    }
+
+    private void hingeLimitsMinMaxPaddleRight(HingeJoint hingeJoint)
+    {
+        targetReleased = hingeJoint.limits.min;
+        targetPressed = hingeJoint.limits.max;
+    }
+
+    private void hingeLimitsMinMaxPaddleLeft(HingeJoint hingeJoint)
+    {
+        targetReleased = hingeJoint.limits.min;
+        targetPressed = hingeJoint.limits.max;
     }
 
     private void HandlePaddleInput(HingeJoint paddle, KeyCode input)
@@ -39,11 +59,11 @@ public class PaddlesController : MonoBehaviour
         if (Input.GetKey(input))
         {
             Debug.Log(paddle.gameObject.name + " Here!");
-            spring.spring = springPower;
+            spring.targetPosition = targetPressed;
         }
         else
         {
-            spring.spring = 0;
+            spring.targetPosition = targetReleased;
         }
 
         paddle.spring = spring;
