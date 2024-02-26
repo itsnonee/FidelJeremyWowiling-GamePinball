@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BumpersController : MonoBehaviour
@@ -7,10 +5,16 @@ public class BumpersController : MonoBehaviour
     [SerializeField] private Collider ball;
     [SerializeField] private float multiplier;
     [SerializeField] private Color color;
+    [SerializeField] private Renderer renderer;
+    [SerializeField] private Animator animator;
 
     private void Start()
     {
-        GetComponent<Renderer>().material.color = color;
+        renderer = GetComponent<Renderer>();
+        animator = GetComponent<Animator>();
+
+        renderer.material.color = color;
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -18,6 +22,9 @@ public class BumpersController : MonoBehaviour
         {
             Rigidbody rigBall = ball.GetComponent<Rigidbody>();
             rigBall.velocity *= multiplier;
+
+            //animasi
+            animator.SetTrigger("Hit");
         }
     }
 }

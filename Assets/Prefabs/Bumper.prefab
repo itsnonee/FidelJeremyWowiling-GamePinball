@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7343683472972012183
+--- !u!1 &7673846011846035858
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8857957615073911334}
-  - component: {fileID: 5522600086290329445}
-  - component: {fileID: 3410685570896925930}
-  - component: {fileID: 2930017902105610997}
-  - component: {fileID: 4534075594431715000}
+  - component: {fileID: 2913202842442902646}
+  - component: {fileID: 8882987805351529915}
+  - component: {fileID: 902193077107171880}
+  - component: {fileID: 2333520242585886156}
+  - component: {fileID: 1833170652813314943}
+  - component: {fileID: 8999533949175817870}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -20,36 +21,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8857957615073911334
+--- !u!4 &2913202842442902646
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7343683472972012183}
+  m_GameObject: {fileID: 7673846011846035858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.84, y: 1, z: 7}
+  m_LocalPosition: {x: 3.62, y: 1, z: 9}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5522600086290329445
+--- !u!33 &8882987805351529915
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7343683472972012183}
+  m_GameObject: {fileID: 7673846011846035858}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3410685570896925930
+--- !u!23 &902193077107171880
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7343683472972012183}
+  m_GameObject: {fileID: 7673846011846035858}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,13 +86,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2930017902105610997
+--- !u!114 &2333520242585886156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7673846011846035858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5f1c806ad49b444b6916e36858383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 0}
+  multiplier: 3
+  color: {r: 0.13082945, g: 0.19074288, b: 0.7924528, a: 0}
+  renderer: {fileID: 0}
+  animator: {fileID: 0}
+--- !u!136 &1833170652813314943
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7343683472972012183}
+  m_GameObject: {fileID: 7673846011846035858}
   m_Material: {fileID: 13400000, guid: 7c113dc27f5ce25409fac2ab65211058, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -108,17 +126,24 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &4534075594431715000
-MonoBehaviour:
+--- !u!95 &8999533949175817870
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7343683472972012183}
+  m_GameObject: {fileID: 7673846011846035858}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df5f1c806ad49b444b6916e36858383d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 8478396656709334633, guid: debfb77f3be3bad4dbe4cb2eaa16b65a, type: 3}
-  multiplier: 3
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 031c0d0887a87ff4aa9a04e120970073, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
