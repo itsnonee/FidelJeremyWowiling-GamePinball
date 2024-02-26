@@ -385,6 +385,18 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1780139986}
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.b
+      value: 0.2021627
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.g
+      value: 0.72195685
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.r
+      value: 0.7264151
+      objectReference: {fileID: 0}
     - target: {fileID: 7343683472972012183, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
       propertyPath: m_Name
       value: Bumper (1)
@@ -1399,6 +1411,18 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1780139986}
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.b
+      value: 0.10065861
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.g
+      value: 0.10065861
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.r
+      value: 0.735849
+      objectReference: {fileID: 0}
     - target: {fileID: 7343683472972012183, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
       propertyPath: m_Name
       value: Bumper (2)
@@ -1645,9 +1669,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 951206980}
     m_Modifications:
-    - target: {fileID: 2177642353739433901, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
-      propertyPath: ball
-      value: 
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.b
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.g
+      value: 0.12001601
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534075594431715000, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
+      propertyPath: color.r
+      value: 0.8025699
       objectReference: {fileID: 0}
     - target: {fileID: 7343683472972012183, guid: 5cf71723421982542b178d22d544e7e8, type: 3}
       propertyPath: m_Name
