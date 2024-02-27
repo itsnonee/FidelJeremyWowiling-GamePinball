@@ -9,6 +9,7 @@ public class SwitchController : MonoBehaviour
     public Material onMaterial;
 
     private bool isOn;
+    private SwitchState state;
     private Renderer renderer;
 
     private void Start()
@@ -16,30 +17,65 @@ public class SwitchController : MonoBehaviour
         renderer = GetComponent<Renderer>();
 
         Set(false);
+        StartCoroutine(BlinkTimerStart(5));
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other == bola)
         {
-            Debug.Log("Bola kena switch");
-            StartCoroutine(Blink(2));
+            Toogle();
         }
     }
 
     void Set(bool active)
     {
-        isOn = active;
-        renderer.material = isOn ? onMaterial : offMaterial;
+        if (active == true)
+        {
+            state = SwitchState.on;
+            renderer.material = onMaterial;
+            StopAllCoroutines();
+        }
+        else
+        {
+            state = SwitchState.off;
+            renderer.material = offMaterial;
+            StartCoroutine(BlinkTimerStart(5));
+        }
+    }
+
+    void Toogle()
+    {
+        if (state == SwitchState.on)
+        {
+            Set(false);
+        }
+        else
+        {
+            Set(true);
+        }
     }
 
     private IEnumerator Blink(int times)
     {
-        int blinkTimes = times * 2;
+        state = SwitchState.blink;
 
-        for (int i = 0; i < blinkTimes; i++)
+        for (int i = 0; i < times; i++)
         {
-            Set(!isOn);
+            renderer.material = onMaterial;
             yield return new WaitForSeconds(0.5f);
+            renderer.material = offMaterial;
+            yield return new WaitForSeconds(0.5f);
+
         }
+
+        state = SwitchState.off;
+
+        StartCoroutine(BlinkTimerStart(5));
+    }
+
+    private IEnumerator BlinkTimerStart(float time)
+    {
+        yield return new WaitForSeconds(time);
+        StartCoroutine(Blink(2));
     }
 }
