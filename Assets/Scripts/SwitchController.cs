@@ -22,7 +22,7 @@ public class SwitchController : MonoBehaviour
         if (other == bola)
         {
             Debug.Log("Bola kena switch");
-            Set(!isOn);
+            StartCoroutine(Blink(2));
         }
     }
 
@@ -30,5 +30,16 @@ public class SwitchController : MonoBehaviour
     {
         isOn = active;
         renderer.material = isOn ? onMaterial : offMaterial;
+    }
+
+    private IEnumerator Blink(int times)
+    {
+        int blinkTimes = times * 2;
+
+        for (int i = 0; i < blinkTimes; i++)
+        {
+            Set(!isOn);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }
