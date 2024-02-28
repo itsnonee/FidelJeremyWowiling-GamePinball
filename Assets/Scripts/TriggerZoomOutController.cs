@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class TriggerZoomOutController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Collider bola;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other == bola)
+        {
+            CameraController.Instance.GoBackToDefault();
+        }
     }
 }

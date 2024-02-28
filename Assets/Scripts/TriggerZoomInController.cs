@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TriggerZoomInController : MonoBehaviour
 {
-    public Collider bola;
+    [SerializeField] Collider bola;
+    [SerializeField] float length;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other == bola)
         {
-            
+            CameraController.Instance.FollowTarget(bola.transform, length);
         }
     }
 }

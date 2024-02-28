@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController Instance {get; private set;}
     public float returnTime;
     public float followSpeed;
     public float length;
@@ -11,6 +12,18 @@ public class CameraController : MonoBehaviour
     private Vector3 defaultPosition;
 
     public bool hasTarget { get { return target != null; } }
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     public void Start()
     {
@@ -29,21 +42,18 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void FollowTarget(Transform targetTransform, float length)
+    public void FollowTarget(Transform targetTransform, float targetLength)
     {
+        StopAllCoroutines();
         target = targetTransform;
-
-        Vector3 targetToCameraDirection = transform.rotation * -Vector3.forward;
-        Vector3 targetPosition = targetTransform.position + ((transform.rotation * -Vector3.forward) * length);
-
-        StartCoroutine(MovePosition(targetPosition, 5));
+        length = targetLength;
     }
 
     public void GoBackToDefault()
     {
         target = null;
-
-        StartCoroutine(MovePosition(defaultPosition, 5));
+        StopAllCoroutines();
+        StartCoroutine(MovePosition(defaultPosition, 1));
     }
 
     private IEnumerator MovePosition(Vector3 target, float time)
