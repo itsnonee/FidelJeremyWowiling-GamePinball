@@ -9,9 +9,16 @@ public class LauncherController : MonoBehaviour
     [SerializeField] private KeyCode input;
     [SerializeField] private float maxForce;
     [SerializeField] private float maxTimeHold;
+    private Renderer renderer;
+    [SerializeField] private Color colorHold;
+    [SerializeField] private Color colorDefault;
 
     private bool isHold = false;
 
+    void Start()
+    {
+        renderer = GetComponent<Renderer>();
+    }
     void OnCollisionStay(Collision collision)
     {
         if (collision.collider == bola)
@@ -42,9 +49,11 @@ public class LauncherController : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
             timeHold += Time.deltaTime;
+            renderer.material.color = colorHold;
         }
         collider.GetComponent<Rigidbody>().AddForce(Vector3.forward * force);
         isHold = false;
+        renderer.material.color = colorDefault;
         
     }
 }
