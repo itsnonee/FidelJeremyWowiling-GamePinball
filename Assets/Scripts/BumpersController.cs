@@ -5,6 +5,7 @@ public class BumpersController : MonoBehaviour
     [SerializeField] private Collider ball;
     [SerializeField] private float multiplier;
     [SerializeField] private Color color;
+    [SerializeField] float score;
     [SerializeField] private Renderer renderer;
     [SerializeField] private Animator animator;
 
@@ -26,8 +27,14 @@ public class BumpersController : MonoBehaviour
             //animasi
             animator.SetTrigger("Hit");
 
+            //playsfx
             AudioManager.Instance.PlaySFX(collision.transform.position);
+
+            //playvfx
             VFXManager.Instance.PlayVFX(collision.transform.position);
+
+            //addscore
+            ScoreManager.Instance.AddScore(score);
         }
     }
 }

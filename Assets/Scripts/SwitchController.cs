@@ -7,6 +7,7 @@ public class SwitchController : MonoBehaviour
     public Collider bola;
     public Material offMaterial;
     public Material onMaterial;
+    [SerializeField] float score;
 
     private bool isOn;
     private SwitchState state;
@@ -48,10 +49,12 @@ public class SwitchController : MonoBehaviour
         if (state == SwitchState.on)
         {
             Set(false);
+            ScoreManager.Instance.AddScore(score);
         }
         else
         {
             Set(true);
+            ScoreManager.Instance.AddScore(score);
         }
     }
 
