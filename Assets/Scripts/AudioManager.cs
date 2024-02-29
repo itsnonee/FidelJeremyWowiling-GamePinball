@@ -1,24 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
     [SerializeField] public AudioSource bgmAudioSource;
-    [SerializeField] private GameObject sfxBumperAudioSource;
-    [SerializeField] private GameObject sfxSwitchAudioSource;
+    [SerializeField] public bool[] isMusicStop;
+    private bool isStop;
     // Start is called before the first frame update
 
     void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
         {
-            Destroy(this);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Instance = this;
+            Destroy(gameObject);
         }
     }
     void Start()
@@ -26,18 +28,47 @@ public class AudioManager : MonoBehaviour
         PlayBGM();
     }
 
+    void Update()
+    {
+        if (isStop == false)
+        {
+            StopMusic();
+        }
+        else
+        {
+            ContinueMusic();
+        }
+    }
+
     public void PlayBGM()
     {
         bgmAudioSource.Play();
     }
 
-    public void PlaySFXBumper(Vector3 spawnPosition)
+    void StopMusic()
     {
-        GameObject.Instantiate(sfxBumperAudioSource, spawnPosition, Quaternion.identity);
+        for (int i = 0; i < isMusicStop.Length; i++)
+        {
+            if (isMusicStop[i] == true && SceneManager.GetActiveScene().buildIndex == i)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
-    public void PlaySFXSwitch(Vector3 spawnPosition)
+    void ContinueMusic()
     {
-        GameObject.Instantiate(sfxSwitchAudioSource, spawnPosition, Quaternion.identity);
+        for (int i = 0; i < isMusicStop.Length; i++)
+        {
+            if (isMusicStop[i] == true && SceneManager.GetActiveScene().buildIndex == i)
+            {
+                bgmAudioSource.Play();
+                isStop = false;
+
+                Debug.Log("Continue Musik");
+
+                break;
+            }
+        }
     }
 }

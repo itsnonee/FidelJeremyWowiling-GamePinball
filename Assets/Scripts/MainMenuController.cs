@@ -8,9 +8,20 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("PinBall");
     }
 
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void ExitButton()
     {
         Application.Quit();
         Debug.Log("Quit Game");
+    }
+
+    public void BackButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Debug.Log("tes");
     }
 }

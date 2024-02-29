@@ -4647,7 +4647,7 @@ Transform:
   m_GameObject: {fileID: 1299851020}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.4312985, z: 0, w: 0.90220934}
-  m_LocalPosition: {x: -7.22, y: 1, z: -9.04}
+  m_LocalPosition: {x: -7.63, y: 1, z: -8.9}
   m_LocalScale: {x: 0.5, y: 1, z: 4.210157}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4840,6 +4840,7 @@ GameObject:
   - component: {fileID: 1363795718}
   - component: {fileID: 1363795720}
   - component: {fileID: 1363795719}
+  - component: {fileID: 1363795721}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -4965,12 +4966,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363795717}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d8d2db2cd6bead4782a0302e0fc0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bgmAudioSource: {fileID: 412857819}
+  isMusicStop: 
+--- !u!114 &1363795721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363795717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec04509434dcfe48bd3a01ae54b2c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   sfxBumperAudioSource: {fileID: 6418678814761137843, guid: 446ba988f221c784f8604adcb58b2f34, type: 3}
   sfxSwitchAudioSource: {fileID: 6418678814761137843, guid: 37326c75411ffb442bca2c2251b39746, type: 3}
 --- !u!1 &1437377344
@@ -5500,7 +5514,7 @@ Transform:
   m_GameObject: {fileID: 1880215018}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
