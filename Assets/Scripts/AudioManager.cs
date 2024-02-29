@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
-    [SerializeField] private AudioSource bgmAudioSource;
+    [SerializeField] public AudioSource bgmAudioSource;
     [SerializeField] private GameObject sfxAudioSource;
     // Start is called before the first frame update
 
@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
         PlayBGM();
     }
 
-    void PlayBGM()
+    public void PlayBGM()
     {
         bgmAudioSource.Play();
     }
