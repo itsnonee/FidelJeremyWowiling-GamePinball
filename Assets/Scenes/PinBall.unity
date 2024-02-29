@@ -161,10 +161,10 @@ RectTransform:
   - {fileID: 52602496}
   m_Father: {fileID: 1187427102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -644.0004, y: -463.6802}
+  m_SizeDelta: {x: 1275.9995, y: 616.3198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6221155
 MonoBehaviour:
@@ -631,10 +631,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6221154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000027657, y: 168}
-  m_SizeDelta: {x: 727.3127, y: 180.6038}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.000027657, y: -140}
+  m_SizeDelta: {x: 727.3127, y: 180.60382}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69528761
 MonoBehaviour:
@@ -3665,7 +3665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7e4fc55072f824d8e2116254065189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfxPrefabs: {fileID: 3391189513760668883, guid: a649b5f806143974da175a719dd36ffe, type: 3}
+  vfxPrefabsBumper: {fileID: 3391189513760668883, guid: a649b5f806143974da175a719dd36ffe, type: 3}
+  vfxPrefabsSwitch: {fileID: 3391189513760668883, guid: 4588ec15604ae6142a9b381e7ed0c6bf, type: 3}
 --- !u!1 &1015098918
 GameObject:
   m_ObjectHideFlags: 0
@@ -3805,9 +3806,9 @@ RectTransform:
   - {fileID: 595498283}
   m_Father: {fileID: 697993367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: -101}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -101}
   m_SizeDelta: {x: 381.8767, y: 122.8016}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015402032
@@ -4006,9 +4007,9 @@ RectTransform:
   - {fileID: 754679720}
   m_Father: {fileID: 697993367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 38.599}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 38.599}
   m_SizeDelta: {x: 381.8767, y: 122.8016}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1049217246
@@ -4563,10 +4564,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4970,7 +4971,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmAudioSource: {fileID: 412857819}
-  sfxAudioSource: {fileID: 6418678814761137843, guid: 446ba988f221c784f8604adcb58b2f34, type: 3}
+  sfxBumperAudioSource: {fileID: 6418678814761137843, guid: 446ba988f221c784f8604adcb58b2f34, type: 3}
+  sfxSwitchAudioSource: {fileID: 6418678814761137843, guid: 37326c75411ffb442bca2c2251b39746, type: 3}
 --- !u!1 &1437377344
 GameObject:
   m_ObjectHideFlags: 0

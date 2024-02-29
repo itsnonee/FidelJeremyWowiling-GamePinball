@@ -25,6 +25,8 @@ public class SwitchController : MonoBehaviour
         if (other == bola)
         {
             Toogle();
+            AudioManager.Instance.PlaySFXSwitch(other.transform.position);
+            VFXManager.Instance.PlayVFXSwitch(other.transform.position);
         }
     }
 

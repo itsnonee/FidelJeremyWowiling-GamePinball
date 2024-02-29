@@ -28,10 +28,10 @@ public class BumpersController : MonoBehaviour
             animator.SetTrigger("Hit");
 
             //playsfx
-            AudioManager.Instance.PlaySFX(collision.transform.position);
+            AudioManager.Instance.PlaySFXBumper(collision.transform.position);
 
             //playvfx
-            VFXManager.Instance.PlayVFX(collision.transform.position);
+            VFXManager.Instance.PlayVFXBumper(collision.transform.position);
 
             //addscore
             ScoreManager.Instance.AddScore(score);

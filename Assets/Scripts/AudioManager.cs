@@ -6,7 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
     [SerializeField] public AudioSource bgmAudioSource;
-    [SerializeField] private GameObject sfxAudioSource;
+    [SerializeField] private GameObject sfxBumperAudioSource;
+    [SerializeField] private GameObject sfxSwitchAudioSource;
     // Start is called before the first frame update
 
     void Awake()
@@ -30,8 +31,13 @@ public class AudioManager : MonoBehaviour
         bgmAudioSource.Play();
     }
 
-    public void PlaySFX(Vector3 spawnPosition)
+    public void PlaySFXBumper(Vector3 spawnPosition)
     {
-        GameObject.Instantiate(sfxAudioSource, spawnPosition, Quaternion.identity);
+        GameObject.Instantiate(sfxBumperAudioSource, spawnPosition, Quaternion.identity);
+    }
+
+    public void PlaySFXSwitch(Vector3 spawnPosition)
+    {
+        GameObject.Instantiate(sfxSwitchAudioSource, spawnPosition, Quaternion.identity);
     }
 }
